@@ -1,6 +1,6 @@
 # SQL Data Warehouse and Analytics Portfolio Project
 
-Welcome to the my data warehouse portfolio project repo!!!
+Welcome to my data warehouse portfolio project repo!!!
 
 A production-style SQL data warehouse designed to transform raw operational data into analytics-ready datasets.
 Features layered ETL processing, dimensional modeling, and a star schema for business reporting.
