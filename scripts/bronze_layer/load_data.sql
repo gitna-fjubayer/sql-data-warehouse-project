@@ -3,7 +3,8 @@ SELECT * FROM bronze.crm/erp_tablename
 To verify if right amount of rows are loaded -
 SELECT COUNT (*) bronze.crm/erp_tablename
 */
-
+CREATE OR ALTER PROCEDURE bronze.load_bronze AS  -- this creates a stored procedure for frequently used script
+BEGIN
 -- Load data into bronze layer tables
 
 -- load data into cust_info table
@@ -35,3 +36,4 @@ WITH (
   FIELDTERMINATOR = ',',
   TABLOCK
 );
+END
