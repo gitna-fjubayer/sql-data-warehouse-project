@@ -15,7 +15,7 @@ PRINT 'LOADING BRONZE LAYER';
 PRINT '=========================';
 
 PRINT '-------------------------';
-PRINT 'LOADING ERP TABLES';
+PRINT 'LOADING CRM TABLES';
 PRINT '-------------------------';
 
 SET @start_time = GETDATE();
