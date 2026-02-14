@@ -15,7 +15,7 @@ cst_key,
 TRIM (cst_firstname) AS cst_firstname,                
 TRIM (cst_lastname) AS cst_lastname,
 CASE WHEN UPPER (TRIM(cst_marital_status)) = 'S' THEN 'SINGLE'    -- Normalize marital status to readable format
-     WHEN UPPER (TRIM(cst_gndr)) = 'M' THEN 'MARRIED'
+     WHEN UPPER (TRIM(cst_marital_status)) = 'M' THEN 'MARRIED'
      ELSE 'N/A'
 END cst_marital_status,
 CASE WHEN UPPER (TRIM(cst_gndr)) = 'F' THEN 'FEMALE'   -- Normalize gender values to readable format
