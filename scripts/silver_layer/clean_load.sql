@@ -108,3 +108,27 @@ Verify cleaned table with
 SELECT * FROM silver.crm_sales_details;
 */
 
+-- Insert cleaned data into silver layer erp_cust_az12 table
+INSERT INTO silver.erp_cust_az12 (
+cid,
+bdate,
+gen)
+
+SELECT 
+CASE WHEN cid LIKE 'NAS%' THEN SUBSTRING (cid, 4, LEN(cid))
+  ELSE cid
+END AS cid,                                                         -- Remove the 'NAS' prefix if present in the cid
+CASE WHEN bdate > GETDATE() THEN NULL
+  ELSE bdate
+END AS bdate,                                                       -- Declare date beyond current dste as NUll
+CASE WHEN UPPER(TRIM(gen)) IN ('F', 'FEMALE') THEN 'Female'
+     WHEN UPPER(TRIM(gen)) IN ('M', 'MALE') THEN 'Male'
+     ELSE 'N/A'
+END AS gen                                                          -- Normalize gender values for readability and handle unknown values
+FROM bronze.erp_cust_az12;
+
+/*
+Verify cleaned table with 
+SELECT * FROM silver.erp_cust_az12;
+*/
+
