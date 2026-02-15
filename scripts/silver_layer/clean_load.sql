@@ -132,3 +132,21 @@ Verify cleaned table with
 SELECT * FROM silver.erp_cust_az12;
 */
 
+-- Insert cleaned data into silver layer erp_loc_a101 table
+INSERT INTO silver.erp_loc_a101 (
+cid,
+cntry)
+
+SELECT 
+REPLACE(cid, '-', '') cid,                                 -- Repplace unwanted hyphens '-' from cid
+CASE WHEN TRIM(cntry) = 'DE' THEN 'Germany'
+     WHEN TRIM(cntry) IN ('US', 'USA') THEN 'United States'
+     WHEN TRIM(cntry) = '' OR cntry IS NULL THEN 'N/A'
+ELSE TRIM(cntry)
+END AS cntry                                                   -- Normalize and handle blank and missing country prefixes
+FROM bronze.erp_loc_a101;
+
+/*
+Verify cleaned table with 
+SELECT * FROM silver.erp_loc_a101;
+*/
