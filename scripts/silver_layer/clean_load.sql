@@ -1,6 +1,10 @@
 -- Silver layer data cleaning
 -- Insert cleaned data into silver layer cust_info table
 
+PRINT '>> Truncating table: silver.crm_cust_info'
+TRUNCATE TABLE silver.crm_cust_info;
+PRINT '>> Inserting data into silver.crm_cust_info'
+
 INSERT INTO silver.crm_cust_info (
   cst_id,
   cst_key,
@@ -37,6 +41,10 @@ SELECT * FROM silver.crm_cust_info;
 
 -- Insert cleaned data into silver layer prd_info table
 
+PRINT '>> Truncating table: silver.crm_prd_info'
+TRUNCATE TABLE silver.crm_prd_info;
+PRINT '>> Inserting data into silver.crm_prd_info'
+
 INSERT INTO silver.crm_prd_info (
 prd_id,
 cat_id,
@@ -67,6 +75,10 @@ SELECT * FROM silver.crm_prd_info;
 */
 
 -- Insert cleaned data into crm_sales_details table
+
+PRINT '>> Truncating table: silver.crm_sales_details'
+TRUNCATE TABLE silver.crm_sales_details;
+PRINT '>> Inserting data into silver.crm_sales_details'
 
 INSERT INTO silver.crm_sales_details (
 sls_ord_num,
@@ -109,6 +121,11 @@ SELECT * FROM silver.crm_sales_details;
 */
 
 -- Insert cleaned data into silver layer erp_cust_az12 table
+
+PRINT '>> Truncating table: silver.erp_cust_az12'
+TRUNCATE TABLE silver.erp_cust_az12;
+PRINT '>> Inserting data into silver.erp_cust_az12'
+
 INSERT INTO silver.erp_cust_az12 (
 cid,
 bdate,
@@ -133,6 +150,11 @@ SELECT * FROM silver.erp_cust_az12;
 */
 
 -- Insert cleaned data into silver layer erp_loc_a101 table
+
+PRINT '>> Truncating table: silver.erp_loc_a101'
+TRUNCATE TABLE silver.erp_loc_a101;
+PRINT '>> Inserting data into silver.erp_loc_a101'
+
 INSERT INTO silver.erp_loc_a101 (
 cid,
 cntry)
@@ -150,3 +172,18 @@ FROM bronze.erp_loc_a101;
 Verify cleaned table with 
 SELECT * FROM silver.erp_loc_a101;
 */
+
+-- Insert data into silver layer erp_px_cat_g1v2 table
+
+PRINT '>> Truncating table: silver.erp_px_cat_g1v2'
+TRUNCATE TABLE silver.erp_px_cat_g1v2;
+PRINT '>> Inserting data into silver.erp_px_cat_g1v2'
+
+INSERT INTO silver.erp_px_cat_g1v2 (id, cat, subcat, maintenance)
+
+SELECT
+id,
+cat,
+subcat,
+maintenance 
+FROM bronze.erp_px_cat_g1v2;           -- Data quality is good so no transformation needed for this table
