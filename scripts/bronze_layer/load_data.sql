@@ -93,7 +93,7 @@ PRINT '===========================';
 -- load data into erp tables
 
 SET @start_time = GETDATE ();
-PRINT '>> TRUNACTING TABLE: bronze.erp_cust_az12';
+PRINT '>> TRUNCATING TABLE: bronze.erp_cust_az12';
 TRUNCATE TABLE bronze.erp_cust_az12;
 
 PRINT '>> INSERTING DATA INTO TABLE: bronze.erp_cust_az12';
@@ -111,7 +111,7 @@ PRINT '*********************';
 
 --load data into loc_a101 
 SET @start_time = GETDATE ();
-PRINT '>> TRUNACTING TABLE: bronze.erp_loc_a101';
+PRINT '>> TRUNCATING TABLE: bronze.erp_loc_a101';
 TRUNCATE TABLE bronze.erp_loc_a101;
 
 PRINT '>> INSERTING DATA INTO TABLE: bronze.erp_loc_a101';
@@ -128,7 +128,7 @@ PRINT '************************';
 
 -- load data into px_cat_g12 
 SET @start_time = GETDATE ();
-PRINT '>> TRUNACTING TABLE: bronze.erp_px_cat_g1v2';
+PRINT '>> TRUNCATING TABLE: bronze.erp_px_cat_g1v2';
 TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 
 PRINT '>> INSERTING DATA INTO TABLE: bronze.erp_px_cat_g1v2';
