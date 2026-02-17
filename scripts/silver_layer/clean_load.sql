@@ -254,10 +254,10 @@ BEGIN
     END TRY
 	BEGIN CATCH
 		PRINT '=========================================='
-		PRINT 'ERROR OCCURED DURING LOADING BRONZE LAYER'
+		PRINT 'ERROR OCCURED DURING LOADING SILVER LAYER'
 		PRINT 'Error Message' + ERROR_MESSAGE();
-		PRINT 'Error Message' + CAST (ERROR_NUMBER() AS NVARCHAR);
-		PRINT 'Error Message' + CAST (ERROR_STATE() AS NVARCHAR);
+		PRINT 'Error Number' + CAST (ERROR_NUMBER() AS NVARCHAR);
+		PRINT 'Error State' + CAST (ERROR_STATE() AS NVARCHAR);
 		PRINT '=========================================='
 	END CATCH
 END
