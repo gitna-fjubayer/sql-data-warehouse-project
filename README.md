@@ -42,8 +42,6 @@ Most businesses run multiple operational systems that don't talk to each other. 
 
 The warehouse follows the **Medallion Architecture** — a three-layer design where data gets progressively more refined at each stage.
 
-docs/architecture-overview.png
-
 ![Architecture Overview](docs/architecture-overview.png)
 
 | Layer | Schema | What Happens | Object Type |
