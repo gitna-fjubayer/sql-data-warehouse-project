@@ -1,4 +1,4 @@
-# SQL Data Warehouse and Analytics Portfolio Project
+# SQL Data Warehouse Project
 
 Welcome to my data warehouse portfolio project repo!!!
 
