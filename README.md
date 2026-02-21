@@ -81,8 +81,6 @@ Data enters from two source systems as CSV files and travels through all three l
 
 ### 🥉 Bronze Layer — Raw Ingestion
 
-> *"Just get the data in."*
-
 Six tables created in the `bronze` schema — one per source file. Data is loaded **exactly as received**, preserving every quirk and inconsistency from the source. This is the safety net: if any Silver transformation goes wrong, you re-examine Bronze without re-importing CSVs.
 
 **Key implementation decisions:**
@@ -101,8 +99,6 @@ EXEC bronze.load_bronze;
 ---
 
 ### 🥈 Silver Layer — Clean & Standardise
-
-> *"Make it trustworthy."*
 
 The `silver.load_silver` stored procedure applies all transformations. Here's what was fixed and why:
 
@@ -157,8 +153,6 @@ EXEC silver.load_silver;
 ---
 
 ### 🥇 Gold Layer — Analytics Ready
-
-> *"Make it useful."*
 
 Three SQL **views** — no physical tables, no separate load step. The views always reflect the latest Silver data automatically.
 
