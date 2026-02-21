@@ -337,5 +337,6 @@ Medallion Architecture forces discipline about where logic belongs. Bronze = cap
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-*Built by Ahnaf Islam · First data engineering project · Feedback welcome*
+## Notion Template
+https://www.notion.so/Data-Warehouse-Project-2fa176e986a680148c9bf99854559451?source=copy_link
+<img width="1214" height="1140" alt="image" src="https://github.com/user-attachments/assets/ec021ba8-ea51-4ea1-829e-16afb1e761ad" />
